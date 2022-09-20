@@ -1,4 +1,8 @@
-let partidas=+prompt("por favor ingrese la cantidad de partidas que desea jugar")
+let partidas=+prompt("por favor ingrese la cantidad de partidas que desea jugar") 
+if(isNaN(partidas) || partidas==0){
+alert("por favor ingrese un dato valido")
+} else{
+
 let juego
 let juegoPc
 let contPc=0
@@ -9,6 +13,8 @@ for (let i = 0; i <partidas; i++) {
 
     juego=+prompt("por favor escoja una de las opciones:\n 1:Piedra. \n 2:Papel. \n 3:Tijera")
 
+if (juego>=1 && juego<=3) {
+    
     if(juego==1 && juegoPc==2){
         alert("PC Win! \n jugador eligio:Piedra \n PC eligio:Papel")
         contPc=contPc+1
@@ -54,6 +60,12 @@ for (let i = 0; i <partidas; i++) {
         contPc=contPc+1
     }
 
+} else{
+    alert("por favor ingrese un dato valido")
+    i--;
+}
 }
 
+
 alert("Fin del Juego. \n\n Resultados:\n User: "+contUser+" Victoria(s) \n PC: "+contPc+" Victoria(s) \n Empates: "+contEmpate+" Empate(s)")
+}
